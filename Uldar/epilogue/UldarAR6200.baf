@@ -1,0 +1,18 @@
+IF
+    Global("StartEndBios","AR6200",1)
+    InParty("Uldar")
+    Global("UldarBio","GLOBAL",0)
+THEN
+    RESPONSE #100
+        SetGlobal("UldarBio","GLOBAL",1)
+        TextScreen("UldEnd")
+        SetGlobal("UldarBio","GLOBAL",1)
+        SmallWait(1)
+        SetGlobal("UldarBio","GLOBAL",1)
+        Continue()
+        SetGlobal("UldarBio","GLOBAL",1)
+END
+
+
+
+

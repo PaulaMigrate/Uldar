@@ -1,0 +1,12 @@
+IF
+  Global("JarallExiste","AR0405",0)
+THEN
+  RESPONSE #100
+    SetGlobal("JarallExiste","AR0405",1)
+    CreateCreature("Jarall",[1522.326],0)
+    CreateCreature("ICYUAN01",[1570.370],0)
+    CreateCreature("ICYUAN01",[1711.419],0)
+    CreateCreature("ICYUAN01",[1499.419],0)	
+END
+
+

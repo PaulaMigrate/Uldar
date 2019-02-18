@@ -1,0 +1,18 @@
+IF
+	InParty("Uldar")
+	Global("UldarJoinedParty","GLOBAL",0)
+THEN
+	RESPONSE #100
+		ReputationInc(-1)
+		SetGlobal("UldarJoinedParty","GLOBAL",1)
+END
+
+IF
+	!InParty("Uldar")
+	!Dead("Uldar")
+	Global("UldarJoinedParty","GLOBAL",1)
+THEN
+	RESPONSE #100
+		ReputationInc(1)
+		SetGlobal("UldarJoinedParty","GLOBAL",0)
+END

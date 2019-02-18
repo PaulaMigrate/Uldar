@@ -1,0 +1,25 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("GladiatorBear")
+		AttackOneRound("Uldarsc1")
+		AttackOneRound("Uldarsc1")
+		AttackOneRound("Uldarsc1")
+		Kill("GladiatorBear")
+END
+
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("Uldarsc1")
+		SmallWait(10)
+                EquipMostDamagingMelee()
+		AttackOneRound("GladiatorBear")
+		AttackOneRound("GladiatorBear")
+		AttackOneRound("GladiatorBear")
+
+                StartCutScene("Cut02e")
+END

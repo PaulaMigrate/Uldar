@@ -1,0 +1,21 @@
+IF
+	SEE("Uldar")
+        
+THEN
+	RESPONSE #100
+                SetGlobal("CeldaninoUldar","GLOBAL",0)
+                EscapeAreaMove("AR0406",2478,300,3)
+END
+
+
+IF
+	GlobalGT("HendakReleased","AR0406",1)
+THEN
+	RESPONSE #100
+                SetGlobal("CeldaninoUldar","GLOBAL",1)
+		EscapeArea()
+END
+
+
+
+

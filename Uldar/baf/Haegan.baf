@@ -1,0 +1,22 @@
+IF
+	See(NearestEnemyOf(Myself))
+	Allegiance(Myself,ENEMY)
+	HasItem("POTN14",Myself)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("DrankPotionTimer","LOCALS",6)
+		UseItem("POTN14",Myself)
+                Attack(NearestEnemyOf(Myself))
+END
+
+
+
+IF
+	HPPercentLT(Myself,50)
+	!GlobalTimerNotExpired("DrankPotionTimer","LOCALS")
+	HasItem("POTN52",Myself)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("DrankPotionTimer","LOCALS",6)
+		UseItem("POTN52",Myself)
+END

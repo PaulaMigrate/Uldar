@@ -1,0 +1,340 @@
+
+BACKUP ~Uldar\backup~
+AUTHOR ~sergiond77@hotmail.com~
+
+//**************************************************************
+//**************************************************************
+
+
+VERSION ~v1.0~
+
+AUTO_TRA ~Uldar/tra/%s~
+
+LANGUAGE ~English~
+         ~english~
+         ~Uldar/tra/english/Setup-Uldar.tra~
+
+
+BEGIN @1
+
+COMPILE ~Uldar\d\Uldarsc1.d~
+COMPILE ~Uldar\d\Uldgua1.d~
+COMPILE ~Uldar\d\Girl1.d~
+COMPILE ~Uldar\d\Boy3.d~
+
+COMPILE ~Uldar\d\Uldar.d~
+COMPILE ~Uldar\d\Uldar25.d~
+COMPILE ~Uldar\d\UldarTob.d~
+
+COMPILE ~Uldar\baf\Uldar.baf~
+COMPILE ~Uldar\baf\Uldarx.baf~
+COMPILE ~Uldar\baf\Uldar25.baf~
+
+EXTEND_TOP ~ar0406.bcs~ ~Uldar\baf\Anadir_Uldar.baf~
+EXTEND_BOTTOM ~ar4500.bcs~ ~Uldar\baf\Anadir_UldarToB.baf~
+
+EXTEND_BOTTOM ~ar0406.bcs~ ~Uldar\baf\AR0406_Uldar.baf~
+EXTEND_BOTTOM ~baldur.bcs~ ~Uldar\baf\Reput_Uldar.baf~
+
+COMPILE ~Uldar\scenes\scene1\cut02a.baf~
+COMPILE ~Uldar\scenes\scene1\cut02b.baf~
+COMPILE ~Uldar\scenes\scene1\cut02c.baf~
+COMPILE ~Uldar\scenes\scene1\cut02d.baf~
+COMPILE ~Uldar\scenes\scene1\cut02e.baf~
+COMPILE ~Uldar\scenes\scene1\cut02f.baf~
+COMPILE ~Uldar\scenes\scene1\cut02g.baf~
+COMPILE ~Uldar\scenes\scene1\cut02h.baf~
+
+COPY ~Uldar\portraits~ ~portraits~
+
+APPEND ~pdialog.2da~
+~Uldar	UldarP	UldarJ	UldarD	Uldar25P  Uldar25J  Uldar25D  Uldar25~
+UNLESS ~Uldar~
+
+
+APPEND ~interdia.2da~                                                    
+~Uldar  BUldar  BUldar25~                  
+UNLESS ~Uldar~
+
+
+COPY ~Uldar\CRE\Uldar.cre~ ~override\Uldar.cre~
+SAY NAME1 @3
+SAY NAME2 @3
+
+SAY INITIAL_MEETING ~~
+SAY MORALE ~~ [2HOM002] 
+SAY HAPPY ~~ 
+SAY UNHAPPY_ANNOYED ~~
+SAY UNHAPPY_SERIOUS ~~
+SAY UNHAPPY_BREAKING ~~
+
+SAY LEADER ~~ [2HOM009] 
+SAY TIRED ~~ [2HOM010] 
+SAY BORED ~~ [2HOM012]
+SAY BATTLE_CRY1 ~~ [2HOM003]
+SAY BATTLE_CRY2 ~~ [2HOM003]
+SAY BATTLE_CRY3 ~~ [2HOM005]
+SAY BATTLE_CRY4 ~~ [2HOM006]
+SAY BATTLE_CRY5 ~~ [2HOM007]
+
+SAY DAMAGE ~~ [2HOM034]
+SAY DYING ~~ [2HOM038]
+SAY HURT ~~ [2HOM014]
+
+SAY AREA_FOREST ~~ 
+SAY AREA_CITY ~~ 
+SAY AREA_DUNGEON ~~
+SAY AREA_DAY ~~ 
+SAY AREA_NIGHT ~~ 
+
+SAY SELECT_COMMON1 ~~ [2HOM022]
+SAY SELECT_COMMON2 ~~ [2HOM017]
+SAY SELECT_COMMON3 ~~ [2HOM021]
+SAY SELECT_COMMON4 ~~ [2HOM019]
+SAY SELECT_COMMON5 ~~ [2HOM020]
+SAY SELECT_COMMON6 ~~ [2HOM021]
+SAY SELECT_ACTION1 ~~ [2HOM023]
+SAY SELECT_ACTION2 ~~ [2HOM024]
+SAY SELECT_ACTION3 ~~ [2HOM025]
+SAY SELECT_ACTION4 ~~ [2HOM026]
+SAY SELECT_ACTION5 ~~ [2HOM027]
+SAY SELECT_ACTION6 ~~ [2HOM028]
+SAY SELECT_ACTION7 ~~ [2HOM029]
+
+SAY SELECT_RARE1 ~~ 
+SAY SELECT_RARE2 ~~ 
+
+SAY CRITICAL_HIT ~~ [2HOM004]
+SAY CRITICAL_MISS @29
+SAY TARGET_IMMUNE @30
+SAY INVENTORY_FULL @29
+
+SAY PICKED_POCKET ~~ 
+SAY HIDDEN_IN_SHADOWS ~~
+SAY SET_A_TRAP ~~ 
+
+SAY EXISTANCE2 ~~ [2HOM035]
+
+SAY BIO @32
+
+
+COPY ~Uldar\CRE\Uldar25.cre~ ~override\Uldar25.cre~
+SAY NAME1 @3
+SAY NAME2 @3
+
+
+SAY INITIAL_MEETING ~~
+SAY MORALE ~~ [2HOM002] 
+SAY HAPPY ~~ 
+SAY UNHAPPY_ANNOYED ~~
+SAY UNHAPPY_SERIOUS ~~
+SAY UNHAPPY_BREAKING ~~
+
+SAY LEADER ~~ [2HOM009] 
+SAY TIRED ~~ [2HOM010] 
+SAY BORED ~~ [2HOM012]
+SAY BATTLE_CRY1 ~~ [2HOM003]
+SAY BATTLE_CRY2 ~~ [2HOM003]
+SAY BATTLE_CRY3 ~~ [2HOM005]
+SAY BATTLE_CRY4 ~~ [2HOM006]
+SAY BATTLE_CRY5 ~~ [2HOM007]
+
+SAY DAMAGE ~~ [2HOM034]
+SAY DYING ~~ [2HOM038]
+SAY HURT ~~ [2HOM014]
+
+SAY AREA_FOREST ~~ 
+SAY AREA_CITY ~~ 
+SAY AREA_DUNGEON ~~
+SAY AREA_DAY ~~ 
+SAY AREA_NIGHT ~~ 
+
+SAY SELECT_COMMON1 ~~ [2HOM022]
+SAY SELECT_COMMON2 ~~ [2HOM017]
+SAY SELECT_COMMON3 ~~ [2HOM021]
+SAY SELECT_COMMON4 ~~ [2HOM019]
+SAY SELECT_COMMON5 ~~ [2HOM020]
+SAY SELECT_COMMON6 ~~ [2HOM021]
+SAY SELECT_ACTION1 ~~ [2HOM023]
+SAY SELECT_ACTION2 ~~ [2HOM024]
+SAY SELECT_ACTION3 ~~ [2HOM025]
+SAY SELECT_ACTION4 ~~ [2HOM026]
+SAY SELECT_ACTION5 ~~ [2HOM027]
+SAY SELECT_ACTION6 ~~ [2HOM028]
+SAY SELECT_ACTION7 ~~ [2HOM029]
+
+SAY SELECT_RARE1 ~~ 
+SAY SELECT_RARE2 ~~ 
+
+SAY CRITICAL_HIT ~~ [2HOM004]
+SAY CRITICAL_MISS @29
+SAY TARGET_IMMUNE @30
+SAY INVENTORY_FULL @29
+
+SAY PICKED_POCKET ~~ 
+SAY HIDDEN_IN_SHADOWS ~~
+SAY SET_A_TRAP ~~ 
+
+SAY EXISTANCE2 ~~ [2HOM035]
+
+SAY BIO @33
+
+EXTEND_TOP ~ar6200.bcs~ ~Uldar\epilogue\UldarAR6200.baf~
+COPY ~Uldar\epilogue\UldEnd.2da~ ~override\UldEnd.2da~
+REPLACE ~99998~ @34
+
+
+//**************************************************************
+//**************************************************************
+
+COPY ~Uldar\sound~ ~override~
+
+//**************************************************************
+//**************************************************************
+
+COPY ~Uldar/monsters/Minotauros~ ~override~
+
+COPY ~Uldar/monsters/HL-Mayores~ ~override~
+
+COPY ~Uldar/monsters/Moles~ ~override~
+
+COPY ~Uldar/monsters/Yuantis~ ~override~
+
+COPY ~Uldar/monsters/Trolls~ ~override~
+
+COPY ~Uldar/monsters/salam~ ~override~
+
+COPY ~Uldar/monsters/sahu~ ~override~
+
+COPY ~Uldar/monsters/drows~ ~override~
+
+COPY ~ULDAR/objects/cartapag.itm~ ~override\cartapag.itm~
+SAY NAME1 @36
+SAY NAME2 @36
+
+SAY UNIDENTIFIED_DESC @37
+
+
+SAY DESC @37
+
+COPY_EXISTING ~glbear.cre~ ~override~
+SAY NAME1 @38
+SAY NAME2 @38
+WRITE_SHORT 0x24 85
+WRITE_SHORT 0x26 85
+WRITE_BYTE 0x238 18
+WRITE_BYTE 0x239 50
+WRITE_BYTE 0x272 103
+WRITE_BYTE 0x273 106
+
+
+COPY ~Uldar\CRE\uldgua1.cre~ ~override\uldgua1.cre~
+COPY ~Uldar\CRE\uldgua2.cre~ ~override\uldgua2.cre~
+
+
+COPY_EXISTING ~boy3.cre~ ~override~
+WRITE_ASCII 0x248 ~BOY3~ #8
+COMPILE ~Uldar\baf\boy3.baf~
+
+
+COPY ~Uldar\CRE\Uldarsc1.cre~ ~override\Uldarsc1.cre~
+SAY NAME1 @3
+SAY NAME2 @3
+
+
+SAY INITIAL_MEETING ~~
+SAY MORALE ~~ [2HOM002] 
+SAY HAPPY ~~ 
+SAY UNHAPPY_ANNOYED ~~
+SAY UNHAPPY_SERIOUS ~~
+SAY UNHAPPY_BREAKING ~~
+
+SAY LEADER ~~ [2HOM009] 
+SAY TIRED ~~ [2HOM010] 
+SAY BORED ~~ [2HOM012]
+SAY BATTLE_CRY1 ~~ [2HOM003]
+SAY BATTLE_CRY2 ~~ [2HOM003]
+SAY BATTLE_CRY3 ~~ [2HOM005]
+SAY BATTLE_CRY4 ~~ [2HOM006]
+SAY BATTLE_CRY5 ~~ [2HOM007]
+
+SAY DAMAGE ~~ [2HOM034]
+SAY DYING ~~ [2HOM038]
+SAY HURT ~~ [2HOM014]
+
+SAY AREA_FOREST ~~ 
+SAY AREA_CITY ~~ 
+SAY AREA_DUNGEON ~~
+SAY AREA_DAY ~~ 
+SAY AREA_NIGHT ~~ 
+
+SAY SELECT_COMMON1 ~~ [2HOM022]
+SAY SELECT_COMMON2 ~~ [2HOM017]
+SAY SELECT_COMMON3 ~~ [2HOM021]
+SAY SELECT_COMMON4 ~~ [2HOM019]
+SAY SELECT_COMMON5 ~~ [2HOM020]
+SAY SELECT_COMMON6 ~~ [2HOM021]
+SAY SELECT_ACTION1 ~~ [2HOM023]
+SAY SELECT_ACTION2 ~~ [2HOM024]
+SAY SELECT_ACTION3 ~~ [2HOM025]
+SAY SELECT_ACTION4 ~~ [2HOM026]
+SAY SELECT_ACTION5 ~~ [2HOM027]
+SAY SELECT_ACTION6 ~~ [2HOM028]
+SAY SELECT_ACTION7 ~~ [2HOM029]
+
+SAY SELECT_RARE1 ~~ 
+SAY SELECT_RARE2 ~~ 
+
+SAY CRITICAL_HIT ~~ [2HOM004]
+SAY CRITICAL_MISS @29
+SAY TARGET_IMMUNE @30
+SAY INVENTORY_FULL @29
+
+SAY PICKED_POCKET ~~ 
+SAY HIDDEN_IN_SHADOWS ~~
+SAY SET_A_TRAP ~~ 
+
+SAY EXISTANCE2 ~~ [2HOM035]
+
+
+COPY_EXISTING ~AR0405.ARE~ ~override~
+  PATCH_IF (SOURCE_SIZE > 0x11b) THEN BEGIN
+    READ_LONG  0x54 "actor_off" ELSE 0
+    READ_SHORT 0x58 "actor_num" ELSE 0
+    PATCH_IF (actor_off > 0x11b) THEN BEGIN
+      FOR (index = 0 ; index < actor_num ; index = index + 1) BEGIN
+        READ_ASCII ("%actor_off%" + 0x80 + (0x110 * "%index%")) "resref"
+		PATCH_IF ("%resref%" STRING_EQUAL_CASE "HAEGAN") BEGIN 
+		  WRITE_SHORT ("%actor_off%" + 0x20 + (0x110 * "%index%")) 2093
+		  WRITE_SHORT ("%actor_off%" + 0x22 + (0x110 * "%index%")) 1256
+		  WRITE_SHORT ("%actor_off%" + 0x24 + (0x110 * "%index%")) 2093
+		  WRITE_SHORT ("%actor_off%" + 0x26 + (0x110 * "%index%")) 1256
+		  WRITE_SHORT ("%actor_off%" + 0x34 + (0x110 * "%index%")) 0
+        END
+      END
+    END
+  END
+BUT_ONLY_IF_IT_CHANGES
+COMPILE ~Uldar\d\girl2.d~
+
+COPY_EXISTING ~Haegan.cre~ ~override~
+WRITE_SHORT 0x24 91
+WRITE_SHORT 0x26 91
+WRITE_BYTE 0x23d 18
+REPLACE_CRE_ITEM ~SW2H01~ #0 #0 #0 ~UNSTEALABLE~ ~WEAPON1~ EQUIP
+REPLACE_CRE_ITEM ~POTN14~ #0 #0 #0 ~NONE~ ~QITEM3~
+REMOVE_CRE_ITEM ~SHLD04~
+EXTEND_BOTTOM ~Haegan.bcs~ ~Uldar\baf\Haegan.baf~
+
+COPY ~Uldar\CRE\Lasard.cre~ ~override\Lasard.cre~
+SAY NAME1 @39
+SAY NAME2 @39
+
+COPY ~Uldar\CRE\Jarall.CRE~ ~override\Jarall.CRE~
+SAY NAME1 @40
+SAY NAME2 @40
+
+COMPILE ~Uldar\baf\Anadir_Jarall.baf~
+COMPILE ~Uldar\baf\Jarall.baf~
+COMPILE ~Uldar\d\Jarall.d~
+EXTEND_TOP ~ar0405.bcs~ ~Uldar\baf\Anadir_Jarall.baf~

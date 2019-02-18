@@ -1,0 +1,189 @@
+IF
+	HPPercentLT(Myself,50)
+	!GlobalTimerNotExpired("DrankPotionTimer","LOCALS")
+	HasItem("POTN55",Myself)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("DrankPotionTimer","LOCALS",6)
+		UseItem("POTN55",Myself)
+END
+
+IF
+	HPPercentLT(Myself,50)
+	!GlobalTimerNotExpired("DrankPotionTimer","LOCALS")
+	HasItem("POTN52",Myself)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("DrankPotionTimer","LOCALS",6)
+		UseItem("POTN52",Myself)
+END
+
+IF
+	HPPercentLT(Myself,50)
+	!GlobalTimerNotExpired("DrankPotionTimer","LOCALS")
+	HasItem("POTN08",Myself)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("DrankPotionTimer","LOCALS",6)
+		UseItem("POTN08",Myself)
+END
+
+IF
+	HitBy([ANYONE],CRUSHING)
+	Global("GiantStrengthPotion","LOCALS",0)
+	!GlobalTimerNotExpired("DrankPotionTimer","LOCALS")
+	HasItem("POTN05",Myself)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("DrankPotionTimer","LOCALS",6)
+		SetGlobal("GiantStrengthPotion","LOCALS",1)
+		UseItem("POTN05",Myself)
+END
+
+IF
+	HitBy([ANYONE],CRUSHING)
+	Global("GiantStrengthPotion","LOCALS",0)
+	!GlobalTimerNotExpired("DrankPotionTimer","LOCALS")
+	HasItem("POTN07",Myself)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("DrankPotionTimer","LOCALS",6)
+		SetGlobal("GiantStrengthPotion","LOCALS",1)
+		UseItem("POTN07",Myself)
+END
+
+IF
+	HPPercentLT(Myself,60)
+	Global("InvulnerabilityPotion","LOCALS",0)
+	!GlobalTimerNotExpired("DrankPotionTimer","LOCALS")
+	HasItem("POTN11",Myself)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("DrankPotionTimer","LOCALS",6)
+		SetGlobal("InvulnerabilityPotion","LOCALS",1)
+		UseItem("POTN11",Myself)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	Allegiance(Myself,ENEMY)
+	Global("HastePotion","LOCALS",0)
+	!GlobalTimerNotExpired("DrankPotionTimer","LOCALS")
+	HasItem("POTN14",Myself)
+THEN
+	RESPONSE #100
+		SetGlobal("HastePotion","LOCALS",1)
+		SetGlobalTimer("SawEnemy","LOCALS",3)
+                UseItem("POTN14",Myself)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	Allegiance(Myself,ENEMY)
+	Global("HastePotion","LOCALS",1)
+	GlobalTimerExpired("SawEnemy","LOCALS")
+	!GlobalTimerNotExpired("DrankPotionTimer","LOCALS")
+	HasItem("POTN14",Myself)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("DrankPotionTimer","LOCALS",6)
+		SetGlobal("HastePotion","LOCALS",2)
+                UseItem("POTN14",Myself)
+END
+
+
+IF
+	See(NearestEnemyOf(Myself))
+	Global("SSBarbaro","LOCALS",0)
+	Range(NearestEnemyOf(Myself),5)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("SSBarbaroTimer","LOCALS",90)
+		ReallyForceSpell(Myself,BARBARIAN_RAGE)
+                Attack(NearestEnemyOf(Myself))
+	        SetGlobal("SSBarbaro","LOCALS",1)
+END
+
+
+
+IF
+	See(NearestEnemyOf(Myself))
+	Global("SSBarbaro","LOCALS",1)
+        !GlobalTimerNotExpired("SSBarbaroTimer","LOCALS")
+	Range(NearestEnemyOf(Myself),5)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("SSBarbaroTimer","LOCALS",90)
+		ReallyForceSpell(Myself,BARBARIAN_RAGE)
+                Attack(NearestEnemyOf(Myself))
+	        SetGlobal("SSBarbaro","LOCALS",2)
+END
+
+
+IF
+	See(NearestEnemyOf(Myself))
+	HaveSpell(BARBARIAN_RAGE)
+        Global("SSBarbaro","LOCALS",2)
+        !GlobalTimerNotExpired("SSBarbaroTimer","LOCALS")
+	Range(NearestEnemyOf(Myself),5)
+
+THEN
+	RESPONSE #100
+		Spell(Myself,BARBARIAN_RAGE)
+		AttackReevaluate(NearestEnemyOf(Myself),15)
+END
+
+
+IF
+	HPPercentLT(Myself,25)
+	HPGT(Myself,1)
+	!StateCheck(Myself,STATE_REALLY_DEAD)
+	Global("Whined","LOCALS",0)
+	See(NearestMyGroupOfType)
+	Allegiance(Myself,ENEMY)
+	!Dead("LastSeenBy(Myself)")
+THEN
+	RESPONSE #100
+		SetGlobal("Whined","LOCALS",1)
+END
+
+IF
+	Heard([ANYONE],111)
+THEN
+	RESPONSE #100
+		MoveToObject(NearestEnemyOf(Myself))
+		Continue()
+END
+
+
+IF
+	Heard([ANYONE],153)
+THEN
+	RESPONSE #100
+		RunAwayFrom(NearestEnemyOf(Myself),45)
+END
+
+IF
+	Heard([ANYONE],154)
+THEN
+	RESPONSE #100
+		AttackReevaluate([PC.0.0.MAGE],45)
+END
+
+
+
+IF
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		EquipMostDamagingMelee()
+		AttackReevaluate(NearestEnemyOf(Myself),15)
+END
+
+IF
+	AttackedBy([ANYONE],DEFAULT)
+THEN
+	RESPONSE #100
+		AttackReevaluate(LastAttackerOf(Myself),30)
+END
+

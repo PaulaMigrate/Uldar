@@ -1,0 +1,10 @@
+IF
+  Global("UldarExiste","AR0406",0)
+THEN
+  RESPONSE #100
+    SetGlobal("UldarExiste","AR0406",1)
+    CreateCreature("Uldar",[2986.771],2) 
+    Continue()
+END
+
+

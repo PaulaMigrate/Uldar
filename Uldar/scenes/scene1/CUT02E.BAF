@@ -1,0 +1,9 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("Uldarsc1")
+		CreateCreature("uldgua1",[2599.1201],0) // Guardia
+		CreateCreature("uldgua2",[2640.1154],0) // Guardia
+		StartCutScene("Cut02f")
+END

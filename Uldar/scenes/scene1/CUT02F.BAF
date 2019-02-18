@@ -1,0 +1,16 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("uldgua1")
+		MoveToPoint([2466.1339])
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("uldgua2")
+		MoveToPoint([2565.1300])
+		StartCutScene("Cut02g")
+END

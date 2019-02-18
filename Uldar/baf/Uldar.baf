@@ -1,0 +1,151 @@
+IF
+        !See("GladiatorBear")
+	See(Player1)
+	NumTimesTalkedTo(0)
+        Global("HendakTold","GLOBAL",1)
+	CombatCounter(0)
+THEN
+	RESPONSE #100
+	StartDialogueNoSet(Player1)
+END
+
+IF 
+      Global("HendakReleased","AR0406",3)
+      Global("VariableBloqueoUldar","AR0406",0)
+THEN
+       RESPONSE #100
+               SetGlobal("TomandoCerveza","GLOBAL",1)
+               SetGlobal("UldarLibre","GLOBAL",1)
+               EscapeAreaMove("AR0406",1373,1760,3)
+               SetGlobal("VariableBloqueoUldar","AR0406",1)                
+END
+	
+IF
+	AreaCheck("AR0400")
+        !See([ENEMY])
+	Global("MisionCharname","GLOBAL",0)
+	InParty(Myself)
+	Detect([PC])
+THEN
+	RESPONSE #100
+		StartDialogueNoSet(Player1)
+		SetGlobal("MisionCharname","GLOBAL",1)
+END
+
+
+
+IF
+	AreaCheck("AR0405")
+        See([ENEMY])
+	Global("BarcoUldar1","GLOBAL",0)
+	InParty(Myself)
+	Detect([PC])
+THEN
+	RESPONSE #100
+		StartDialogueNoSet(Player1)
+		SetGlobal("BarcoUldar1","GLOBAL",1)
+END
+
+IF
+	AreaCheck("AR0405")
+        !See([ENEMY])
+	Global("BarcoUldar2","GLOBAL",0)
+	InParty(Myself)
+	Detect([PC])
+THEN
+	RESPONSE #100
+		StartDialogueNoSet(Player1)
+		SetGlobal("BarcoUldar2","GLOBAL",1)
+END
+
+
+IF
+    AreaCheck("AR0405")
+    Global("QueesJarall","GLOBAL",1)
+    Dead("Jarall")
+    Global("SobreJarall","LOCALS",0)
+THEN
+    RESPONSE #100
+        Wait(4)
+	StartDialogueNoSet(Player1)
+        SetGlobal("SobreJarall","LOCALS",1)
+END
+
+IF
+	AreaCheck("AR2100")
+	Global("UldarInfraoscuridad","GLOBAL",0)
+	InParty(Myself)
+	Detect([PC])
+THEN
+	RESPONSE #100
+		StartDialogueNoSet(Player1)
+		SetGlobal("UldarInfraoscuridad","GLOBAL",1)
+END  
+
+
+IF
+	AreaCheck("AR2200")
+	Global("UldarUstNatha","GLOBAL",0)
+	InParty(Myself)
+	Detect([PC])
+THEN
+	RESPONSE #100
+		StartDialogueNoSet(Player1)
+		SetGlobal("UldarUstNatha","GLOBAL",1)
+END
+
+
+IF
+	AreaCheck("AR0808")
+	Global("UldarBodhiFinal","GLOBAL",0)
+	InParty(Myself)
+	Detect([PC])
+THEN
+	RESPONSE #100
+		StartDialogueNoSet(Player1)
+		SetGlobal("UldarBodhiFinal","GLOBAL",1)
+END
+
+IF
+	AreaCheck("AR2800")
+	Global("UldarSuldanessalar","GLOBAL",0)
+	InParty(Myself)
+	Detect([PC])
+THEN
+	RESPONSE #100
+		StartDialogueNoSet(Player1)
+		SetGlobal("UldarSuldanessalar","GLOBAL",1)
+END
+
+
+
+IF
+	AreaCheck("AR0314")
+	Global("UldarGrook","GLOBAL",0)
+	InParty(Myself)
+	Detect([PC])
+THEN
+	RESPONSE #100
+		StartDialogueNoSet(Player1)
+		SetGlobal("UldarGrook","GLOBAL",1)
+END
+
+
+IF
+InParty(Myself)
+GlobalTimerExpired("UldarDialogo","GLOBAL")
+CombatCounter(0)
+!See([ENEMY])
+!Range([NEUTRAL],10)
+OR(2)
+Global("DialogosconUldar","LOCALS",1)
+Global("DialogosconUldar","LOCALS",3)
+THEN
+RESPONSE #100
+IncrementGlobal("DialogosconUldar","LOCALS",1)
+Interact(Player1)
+END
+
+
+
+

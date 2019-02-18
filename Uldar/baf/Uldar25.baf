@@ -1,0 +1,65 @@
+//***************PRESENTACION***********************************
+
+IF
+	Global("UldarSummoned","GLOBAL",1)
+THEN
+	RESPONSE #100
+		StartDialogueNoSet([PC])
+		Wait(1)
+END
+
+IF
+	AreaCheck("AR5200")
+	Global("ActividadVolcanica","GLOBAL",0)
+	InParty(Myself)
+	Detect([PC])
+THEN
+	RESPONSE #100
+		StartDialogueNoSet(Player1)
+		SetGlobal("ActividadVolcanica","GLOBAL",1)
+END
+
+
+IF
+	AreaCheck("AR6100")
+	Global("UldarAfuerasSendai","GLOBAL",0)
+	InParty(Myself)
+	Detect([PC])
+THEN
+	RESPONSE #100
+		StartDialogueNoSet(Player1)
+		SetGlobal("UldarAfuerasSendai","GLOBAL",1)
+END
+
+IF
+	AreaCheck("AR6105")
+	Global("UldarDiayzha","GLOBAL",0)
+	InParty(Myself)
+	Detect([PC])
+THEN
+	RESPONSE #100
+		StartDialogueNoSet(Player1)
+		SetGlobal("UldarDiayzha","GLOBAL",1)
+
+END
+
+
+IF
+    AreaCheck("AR4500")
+    OR(2)
+	    PartyHasItem("HAMM10")
+            PartyHasItem("SW1H77")
+    Global("ZakiSpawnPlane","GLOBAL",0)
+    InParty("Uldar")
+THEN
+    RESPONSE #100
+        Wait(4)
+	StartDialogueNoSet(Player1) 
+        SetGlobal("ZakiSpawnPlane","GLOBAL",1)
+END
+
+
+
+
+
+

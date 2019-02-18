@@ -1,0 +1,11 @@
+
+IF
+    Global("UldarSummoned","GLOBAL",1)
+    Global("UldarSpawnPlane","GLOBAL",0)
+THEN
+    RESPONSE #100
+        CreateVisualEffect("SPPORTAL",[1999.1218])
+        Wait(2)
+        CreateCreature("Uldar25",[1999.1218],0)  
+        SetGlobal("UldarSpawnPlane","GLOBAL",1)
+END

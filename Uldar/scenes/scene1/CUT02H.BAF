@@ -1,0 +1,28 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("uldgua2")
+                EscapeArea()
+END
+
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("uldgua1")
+                EscapeArea()
+END
+
+
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("Uldarsc1")
+                DropInventory()
+                EndCutSceneMode()
+                EscapeArea()
+END

@@ -1,0 +1,18 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("uldgua1")
+                //SmallWait(10)
+                StartDialogueNoSet(Player1)
+END
+
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("Uldarsc1")
+                //SmallWait(10)
+                StartCutScene("Cut02h")
+END
