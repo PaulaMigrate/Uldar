@@ -45,7 +45,7 @@ IF WEIGHT #-1~NumTimesTalkedToGT(0) Global("HendakReleased","AR0406",2) Global("
 END
 
 
-IF WEIGHT #-2~NumTimesTalkedToGT(0) Global("HendakReleased","AR0406",3) Global("TomandoCerveza","GLOBAL",1) Global("UldarAgradece","GLOBAL",0)~ THEN BEGIN Descansando
+IF WEIGHT #-2~NumTimesTalkedToGT(0) GlobalGT("HendakReleased","AR0406",2) Global("TomandoCerveza","GLOBAL",1) Global("UldarAgradece","GLOBAL",0)~ THEN BEGIN Descansando
   SAY @17
       =   
       @18
