@@ -10,7 +10,7 @@ THEN
 END
 
 IF 
-      Global("HendakReleased","AR0406",3)
+      GlobalGT("HendakReleased","AR0406",2)
       Global("VariableBloqueoUldar","AR0406",0)
 THEN
        RESPONSE #100
