@@ -14,6 +14,9 @@ LANGUAGE ~English~
          ~english~
          ~Uldar/tra/english/Setup-Uldar.tra~
 
+LANGUAGE ~Schinese~
+         ~schinese~
+         ~Uldar/tra/schinese/Setup-Uldar.tra~
 
 BEGIN @1
 
